@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subscribe to Wenda X Gray Series</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+    /* ===== GLOBAL STYLES ===== */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #f0f4ff, #d9e6ff);
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+        background: linear-gradient(90deg, #4e54c8, #8f94fb);
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+        animation: fadeIn 2s ease-in;
+    }
+    header h1 {
+        font-size: 2.8rem;
+        margin-bottom: 10px;
+    }
+    header p {
+        font-size: 1.2rem;
+        font-weight: 500;
+        opacity: 0.9;
+    }
+
+    /* ===== SECTION ===== */
+    section {
+        max-width: 800px;
+        background: white;
+        margin: -40px auto 40px auto;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        transition: transform 0.3s, box-shadow 0.3s;
+        animation: fadeIn 2s ease-in;
+    }
+    section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+    }
+
+    section h2 {
+        color: #4e54c8;
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    section h3 {
+        color: #8f94fb;
+        font-size: 1.5rem;
+        margin: 20px 0 10px 0;
+    }
+    section p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    /* ===== BUTTON ===== */
+    .subscribe-button {
+        display: inline-block;
+        padding: 15px 30px;
+        background: #ff416c;
+        background: linear-gradient(45deg, #ff4b2b, #ff416c);
+        color: white;
+        font-weight: 600;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 5px 15px rgba(255,65,108,0.4);
+    }
+    .subscribe-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(255,65,108,0.6);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+        header h1 { font-size: 2rem; }
+        section { padding: 25px; margin: -20px 15px 20px 15px; }
+        .subscribe-button { font-size: 1rem; padding: 12px 25px; }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Wenda X Gray Series!</h1>
+        <p>Discover animations that ignite your imagination</p>
+    </header>
+    <section>
+        <h2>Why Subscribe?</h2>
+        <p>The Wenda X Gray Series, created by the talented <strong>Avery Johnson</strong>, features some of the most captivating animations on YouTube. Every episode is crafted with creativity, passion, and stunning visuals.</p>
+        <p>Join our community and become part of the adventure. Subscribe now to never miss a moment!</p>
+        <h3>Experience the Magic</h3>
+        <p>With breathtaking animation and immersive storytelling, the Wenda X Gray Series is more than a show—it's an experience. Perfect for animation lovers and anyone who enjoys a visual journey.</p>
+        <a class="subscribe-button" href="https://www.youtube.com/@AveryJohnson2012" target="_blank">Subscribe Now!</a>
+    </section>
+</body>
+</html>
