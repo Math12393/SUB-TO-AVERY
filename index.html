@@ -108,15 +108,47 @@ section p { font-size: 1.1rem; margin-bottom: 15px; line-height: 1.8; color: #ee
     box-shadow: 0 0 40px #ff416c, 0 0 80px #ff4b2b, 0 0 120px #ff416c;
 }
 
+/* ===== DISCORD BUTTON ===== */
+.discord-button {
+    display: inline-block;
+    padding: 20px 50px;
+    background: linear-gradient(45deg, #7289da, #99aab5);
+    color: white;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-left: 20px;
+    box-shadow: 0 0 20px #7289da, 0 0 40px #99aab5;
+    transition: all 0.4s;
+    cursor: pointer;
+    animation: pulseDiscord 2s infinite;
+}
+.discord-button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 40px #7289da, 0 0 80px #99aab5, 0 0 120px #7289da;
+}
+
+/* Pulse animation for Discord button */
+@keyframes pulseDiscord {
+    0% { box-shadow:0 0 20px #7289da,0 0 40px #99aab5; transform:scale(1); }
+    50% { box-shadow:0 0 40px #7289da,0 0 80px #99aab5; transform:scale(1.05);}
+    100% { box-shadow:0 0 20px #7289da,0 0 40px #99aab5; transform:scale(1); }
+}
+
 /* ===== ANIMATIONS ===== */
 @keyframes fadeInUp { from { opacity:0; transform: translateY(40px); } to { opacity:1; transform:translateY(0); } }
 @keyframes pulse { 0% { box-shadow:0 0 20px #ff416c,0 0 40px #ff4b2b; transform:scale(1); } 50% { box-shadow:0 0 40px #ff416c,0 0 80px #ff4b2b; transform:scale(1.05);} 100% { box-shadow:0 0 20px #ff416c,0 0 40px #ff4b2b; transform:scale(1); } }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width:600px) {
-    header h1{ font-size:2.2rem; } header p{ font-size:1rem; }
+    header h1{ font-size:2.2rem; } 
+    header p{ font-size:1rem; }
     section{ padding:35px 25px; margin:-40px 15px 20px 15px; }
-    .subscribe-button{ font-size:1rem; padding:15px 35px; }
+    .subscribe-button, .discord-button{ 
+        font-size:1rem; padding:15px 35px; margin-top:15px; display:block; margin-left:auto; margin-right:auto;
+    }
 }
 </style>
 </head>
@@ -132,7 +164,10 @@ section p { font-size: 1.1rem; margin-bottom: 15px; line-height: 1.8; color: #ee
     <p>Join our community and become part of the adventure. Subscribe now to never miss a moment!</p>
     <h3>Experience the Magic</h3>
     <p>With breathtaking animation and immersive storytelling, the Wenda X Gray Series is more than a show—it's an experience. Perfect for animation lovers and anyone who enjoys a visual journey.</p>
+    
+    <!-- Buttons -->
     <a class="subscribe-button" href="https://www.youtube.com/@AveryJohnson2012" target="_blank">Subscribe Now!</a>
+    <a class="discord-button" href="https://discord.gg/GvPcQwTxXf" target="_blank">Join the Community</a>
 </section>
 
 <div class="particles" id="particles"></div>
