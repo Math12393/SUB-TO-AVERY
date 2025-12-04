@@ -6,114 +6,152 @@
 <title>Subscribe to Wenda X Gray Series</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-    /* ===== GLOBAL STYLES ===== */
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    body {
-        font-family: 'Inter', sans-serif;
-        background: linear-gradient(135deg, #f0f4ff, #d9e6ff);
-        color: #333;
-        line-height: 1.6;
-    }
+/* ===== GLOBAL STYLES ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #0b0c1a;
+    color: #fff;
+    position: relative;
+}
 
-    /* ===== HEADER ===== */
-    header {
-        background: linear-gradient(90deg, #4e54c8, #8f94fb);
-        color: white;
-        text-align: center;
-        padding: 60px 20px;
-        animation: fadeIn 2s ease-in;
-    }
-    header h1 {
-        font-size: 2.8rem;
-        margin-bottom: 10px;
-    }
-    header p {
-        font-size: 1.2rem;
-        font-weight: 500;
-        opacity: 0.9;
-    }
+/* ===== COSMIC BACKGROUND ===== */
+body::before {
+    content: "";
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/7/7e/Starfield.png') repeat;
+    animation: starsMove 120s linear infinite;
+    z-index: 0;
+}
+body::after {
+    content: "";
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/2/28/Nebula_Abell_39.jpg') center/cover no-repeat;
+    opacity: 0.25;
+    z-index: 0;
+}
 
-    /* ===== SECTION ===== */
-    section {
-        max-width: 800px;
-        background: white;
-        margin: -40px auto 40px auto;
-        padding: 40px;
-        border-radius: 15px;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        transition: transform 0.3s, box-shadow 0.3s;
-        animation: fadeIn 2s ease-in;
-    }
-    section:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 25px 60px rgba(0,0,0,0.2);
-    }
+/* ===== PARTICLE EFFECT ===== */
+.particles { position: fixed; top:0; left:0; width: 100%; height: 100%; pointer-events: none; z-index:1; }
+.particle {
+    position: absolute;
+    width: 2px; height: 2px;
+    background: white; border-radius: 50%;
+    opacity: 0.8;
+    animation: float 10s linear infinite;
+}
 
-    section h2 {
-        color: #4e54c8;
-        font-size: 2rem;
-        margin-bottom: 15px;
-    }
-    section h3 {
-        color: #8f94fb;
-        font-size: 1.5rem;
-        margin: 20px 0 10px 0;
-    }
-    section p {
-        font-size: 1rem;
-        margin-bottom: 15px;
-    }
+@keyframes starsMove {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+}
+@keyframes float {
+    0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+    50% { transform: translateY(-50px) translateX(50px); opacity: 0.4; }
+    100% { transform: translateY(0) translateX(0); opacity: 0.8; }
+}
 
-    /* ===== BUTTON ===== */
-    .subscribe-button {
-        display: inline-block;
-        padding: 15px 30px;
-        background: #ff416c;
-        background: linear-gradient(45deg, #ff4b2b, #ff416c);
-        color: white;
-        font-weight: 600;
-        font-size: 1.2rem;
-        border: none;
-        border-radius: 50px;
-        text-decoration: none;
-        transition: transform 0.3s, box-shadow 0.3s;
-        box-shadow: 0 5px 15px rgba(255,65,108,0.4);
-    }
-    .subscribe-button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 25px rgba(255,65,108,0.6);
-    }
+/* ===== HEADER ===== */
+header {
+    text-align: center;
+    padding: 100px 20px 60px 20px;
+    position: relative; z-index: 2;
+    animation: fadeInUp 2s ease-out;
+}
+header h1 {
+    font-size: 3rem; margin-bottom: 15px;
+    text-shadow: 0 0 20px #ff6ec7, 0 0 40px #4dd0e1;
+}
+header p {
+    font-size: 1.3rem; font-weight: 500; opacity: 0.8;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
 
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+/* ===== GLASSMORPHIC SECTION ===== */
+section {
+    max-width: 800px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    margin: -60px auto 60px auto;
+    padding: 50px 40px;
+    border-radius: 25px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+    transition: transform 0.5s, box-shadow 0.5s;
+    position: relative; z-index: 2;
+    animation: fadeInUp 2s ease-out;
+}
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.9);
+}
+section h2 { color: #ff6ec7; font-size: 2.4rem; margin-bottom: 15px; text-shadow: 0 0 15px #ff6ec7, 0 0 30px #ff4b2b; }
+section h3 { color: #4dd0e1; font-size: 1.7rem; margin: 20px 0 10px 0; text-shadow: 0 0 15px #4dd0e1, 0 0 30px #00f0ff; }
+section p { font-size: 1.1rem; margin-bottom: 15px; line-height: 1.8; color: #eee; }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 600px) {
-        header h1 { font-size: 2rem; }
-        section { padding: 25px; margin: -20px 15px 20px 15px; }
-        .subscribe-button { font-size: 1rem; padding: 12px 25px; }
-    }
+/* ===== SUBSCRIBE BUTTON ===== */
+.subscribe-button {
+    display: inline-block;
+    padding: 20px 50px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white; font-weight: 700; font-size: 1.3rem;
+    border: none; border-radius: 50px;
+    text-decoration: none; box-shadow: 0 0 20px #ff416c, 0 0 40px #ff4b2b;
+    transition: all 0.4s; cursor: pointer;
+    animation: pulse 2s infinite;
+}
+.subscribe-button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 40px #ff416c, 0 0 80px #ff4b2b, 0 0 120px #ff416c;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp { from { opacity:0; transform: translateY(40px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0% { box-shadow:0 0 20px #ff416c,0 0 40px #ff4b2b; transform:scale(1); } 50% { box-shadow:0 0 40px #ff416c,0 0 80px #ff4b2b; transform:scale(1.05);} 100% { box-shadow:0 0 20px #ff416c,0 0 40px #ff4b2b; transform:scale(1); } }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:600px) {
+    header h1{ font-size:2.2rem; } header p{ font-size:1rem; }
+    section{ padding:35px 25px; margin:-40px 15px 20px 15px; }
+    .subscribe-button{ font-size:1rem; padding:15px 35px; }
+}
 </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to the Wenda X Gray Series!</h1>
-        <p>Discover animations that ignite your imagination</p>
-    </header>
-    <section>
-        <h2>Why Subscribe?</h2>
-        <p>The Wenda X Gray Series, created by the talented <strong>Avery Johnson</strong>, features some of the most captivating animations on YouTube. Every episode is crafted with creativity, passion, and stunning visuals.</p>
-        <p>Join our community and become part of the adventure. Subscribe now to never miss a moment!</p>
-        <h3>Experience the Magic</h3>
-        <p>With breathtaking animation and immersive storytelling, the Wenda X Gray Series is more than a show—it's an experience. Perfect for animation lovers and anyone who enjoys a visual journey.</p>
-        <a class="subscribe-button" href="https://www.youtube.com/@AveryJohnson2012" target="_blank">Subscribe Now!</a>
-    </section>
+<header>
+    <h1>Welcome to the Wenda X Gray Series!</h1>
+    <p>Discover animations that ignite your imagination</p>
+</header>
+
+<section>
+    <h2>Why Subscribe?</h2>
+    <p>The Wenda X Gray Series, created by the talented <strong>Avery Johnson</strong>, features some of the most captivating animations on YouTube. Every episode is crafted with creativity, passion, and stunning visuals.</p>
+    <p>Join our community and become part of the adventure. Subscribe now to never miss a moment!</p>
+    <h3>Experience the Magic</h3>
+    <p>With breathtaking animation and immersive storytelling, the Wenda X Gray Series is more than a show—it's an experience. Perfect for animation lovers and anyone who enjoys a visual journey.</p>
+    <a class="subscribe-button" href="https://www.youtube.com/@AveryJohnson2012" target="_blank">Subscribe Now!</a>
+</section>
+
+<div class="particles" id="particles"></div>
+
+<script>
+// ===== GENERATE PARTICLES =====
+const particlesContainer = document.getElementById('particles');
+const particleCount = 100;
+for(let i=0;i<particleCount;i++){
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    particle.style.top = Math.random()*100 + '%';
+    particle.style.left = Math.random()*100 + '%';
+    particle.style.width = (Math.random()*2 + 1) + 'px';
+    particle.style.height = particle.style.width;
+    particle.style.animationDuration = (Math.random()*15 + 5) + 's';
+    particle.style.opacity = Math.random();
+    particlesContainer.appendChild(particle);
+}
+</script>
 </body>
 </html>
