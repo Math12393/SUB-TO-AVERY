@@ -92,15 +92,27 @@ section h2 { color: #ff6ec7; font-size: 2.4rem; margin-bottom: 15px; text-shadow
 section h3 { color: #4dd0e1; font-size: 1.7rem; margin: 20px 0 10px 0; text-shadow: 0 0 15px #4dd0e1, 0 0 30px #00f0ff; }
 section p { font-size: 1.1rem; margin-bottom: 15px; line-height: 1.8; color: #eee; }
 
-/* ===== SUBSCRIBE BUTTON ===== */
-.subscribe-button {
+/* ===== BUTTON BASE ===== */
+.subscribe-button,
+.discord-button,
+.avery-button {
     display: inline-block;
     padding: 20px 50px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    border: none;
+    transition: all 0.4s;
+    cursor: pointer;
+    margin: 10px;
+}
+
+/* ===== SUBSCRIBE BUTTON ===== */
+.subscribe-button {
     background: linear-gradient(45deg, #ff416c, #ff4b2b);
-    color: white; font-weight: 700; font-size: 1.3rem;
-    border: none; border-radius: 50px;
-    text-decoration: none; box-shadow: 0 0 20px #ff416c, 0 0 40px #ff4b2b;
-    transition: all 0.4s; cursor: pointer;
+    color: white;
+    box-shadow: 0 0 20px #ff416c, 0 0 40px #ff4b2b;
     animation: pulse 2s infinite;
 }
 .subscribe-button:hover {
@@ -110,19 +122,9 @@ section p { font-size: 1.1rem; margin-bottom: 15px; line-height: 1.8; color: #ee
 
 /* ===== DISCORD BUTTON ===== */
 .discord-button {
-    display: inline-block;
-    padding: 20px 50px;
     background: linear-gradient(45deg, #7289da, #99aab5);
     color: white;
-    font-weight: 700;
-    font-size: 1.3rem;
-    border: none;
-    border-radius: 50px;
-    text-decoration: none;
-    margin-left: 20px;
     box-shadow: 0 0 20px #7289da, 0 0 40px #99aab5;
-    transition: all 0.4s;
-    cursor: pointer;
     animation: pulseDiscord 2s infinite;
 }
 .discord-button:hover {
@@ -130,24 +132,48 @@ section p { font-size: 1.1rem; margin-bottom: 15px; line-height: 1.8; color: #ee
     box-shadow: 0 0 40px #7289da, 0 0 80px #99aab5, 0 0 120px #7289da;
 }
 
-/* Pulse animation for Discord button */
-@keyframes pulseDiscord {
-    0% { box-shadow:0 0 20px #7289da,0 0 40px #99aab5; transform:scale(1); }
-    50% { box-shadow:0 0 40px #7289da,0 0 80px #99aab5; transform:scale(1.05);}
-    100% { box-shadow:0 0 20px #7289da,0 0 40px #99aab5; transform:scale(1); }
+/* ===== AVERY CHAT BUTTON ===== */
+.avery-button {
+    background: linear-gradient(45deg, #6a5acd, #ff6ec7);
+    color: white;
+    box-shadow: 0 0 20px #b06cff, 0 0 40px #ff6ec7;
+    animation: pulseAvery 2s infinite;
+}
+.avery-button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 40px #b06cff, 0 0 80px #ff6ec7, 0 0 120px #b06cff;
 }
 
-/* ===== ANIMATIONS ===== */
-@keyframes fadeInUp { from { opacity:0; transform: translateY(40px); } to { opacity:1; transform:translateY(0); } }
-@keyframes pulse { 0% { box-shadow:0 0 20px #ff416c,0 0 40px #ff4b2b; transform:scale(1); } 50% { box-shadow:0 0 40px #ff416c,0 0 80px #ff4b2b; transform:scale(1.05);} 100% { box-shadow:0 0 20px #ff416c,0 0 40px #ff4b2b; transform:scale(1); } }
+/* Pulse animations */
+@keyframes pulseDiscord {
+    0% { box-shadow:0 0 20px #7289da,0 0 40px #99aab5; }
+    50% { box-shadow:0 0 40px #7289da,0 0 80px #99aab5; }
+    100% { box-shadow:0 0 20px #7289da,0 0 40px #99aab5; }
+}
+@keyframes pulseAvery {
+    0% { box-shadow:0 0 20px #b06cff,0 0 40px #ff6ec7; }
+    50% { box-shadow:0 0 40px #b06cff,0 0 80px #ff6ec7; }
+    100% { box-shadow:0 0 20px #b06cff,0 0 40px #ff6ec7; }
+}
+@keyframes pulse {
+    0% { box-shadow:0 0 20px #ff416c,0 0 40px #ff4b2b; }
+    50% { box-shadow:0 0 40px #ff416c,0 0 80px #ff4b2b; }
+    100% { box-shadow:0 0 20px #ff416c,0 0 40px #ff4b2b; }
+}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width:600px) {
-    header h1{ font-size:2.2rem; } 
+    header h1{ font-size:2.2rem; }
     header p{ font-size:1rem; }
     section{ padding:35px 25px; margin:-40px 15px 20px 15px; }
-    .subscribe-button, .discord-button{ 
-        font-size:1rem; padding:15px 35px; margin-top:15px; display:block; margin-left:auto; margin-right:auto;
+
+    .subscribe-button,
+    .discord-button,
+    .avery-button {
+        font-size:1rem;
+        padding:15px 35px;
+        display:block;
+        margin-left:auto; margin-right:auto;
     }
 }
 </style>
@@ -168,6 +194,7 @@ section p { font-size: 1.1rem; margin-bottom: 15px; line-height: 1.8; color: #ee
     <!-- Buttons -->
     <a class="subscribe-button" href="https://www.youtube.com/@AveryJohnson2012" target="_blank">Subscribe Now!</a>
     <a class="discord-button" href="https://discord.gg/GvPcQwTxXf" target="_blank">Join the Community</a>
+    <a class="avery-button" href="https://math12393.github.io/Avery-chat/" target="_blank">Chat With Avery</a>
 </section>
 
 <div class="particles" id="particles"></div>
@@ -188,5 +215,6 @@ for(let i=0;i<particleCount;i++){
     particlesContainer.appendChild(particle);
 }
 </script>
+
 </body>
 </html>
